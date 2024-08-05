@@ -1,7 +1,7 @@
 @extends('layout.root')
 
 @section('title-page')
-    LITABMAS
+    Login
 @endsection
 
 @section('content')
