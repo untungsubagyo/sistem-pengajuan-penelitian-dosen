@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('tim_litabmas', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('id_proposal')->unsigned()->index();
+            $table->foreign('id_proposal')->references('id')->on('proposal')->onDelete('cascade');
+            $table->string('nama',255);
+            $table->text('tugas');
+            $table->enum('status',['Ketua','Anggota']);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('tim_litabmas');
+    }
+};
