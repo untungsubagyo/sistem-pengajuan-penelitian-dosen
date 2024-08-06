@@ -11,4 +11,4 @@ class pengumuman extends Model
     protected $fillable = [
         'tanggal', 'judul', 'deskripsi', 'file', 'status'
     ];
-}
+} 
