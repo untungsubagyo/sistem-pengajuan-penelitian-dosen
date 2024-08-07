@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tim_litabmas', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_proposal')->unsigned()->index();
-            $table->foreign('id_proposal')->references('id')->on('proposal')->onDelete('cascade');
+            $table->bigInteger('id_proposal')->unsigned();
+            $table->foreign('id_proposal')->references('id')->on('proposals')->onDelete('cascade');
             $table->string('nama',255);
             $table->text('tugas');
             $table->enum('status',['Ketua','Anggota']);

@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->string('user_nidn', 18);
-            $table->foreign('user_nidn')->constrained('users', 'nidn');
-            $table->foreignId('id_skema')->constrained('skema_penelitian');
+            $table->string('user_nidn', 10);
+            $table->foreign('user_nidn')->references('nidn')->on('users')->onDelete('cascade');
+            
+            $table->bigInteger('id_skema')->unsigned();
+            $table->foreign('id_skema')->references('id')->on('skema_penelitians');
             $table->string('judul');
             $table->string('nama_mitra');
             $table->text('alamat_mitra');
