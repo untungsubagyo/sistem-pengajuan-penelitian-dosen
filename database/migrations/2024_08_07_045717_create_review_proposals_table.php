@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('review_proposals', function (Blueprint $table) {
             $table->id();
-            $table->string('id_user',18);
+            $table->string('id_user',10);
             $table->foreign('id_user')->references('nidn')->on('users')->onDelete('cascade');
-            $table->bigInteger('id_proposal');
+            $table->bigInteger('id_proposal')->unsigned();
             $table->foreign('id_proposal')->references('id')->on('proposals')->onDelete('cascade');
             $table->date ('reviwer_data');
             $table->text ('file');
