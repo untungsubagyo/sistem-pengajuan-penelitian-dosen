@@ -4,8 +4,6 @@ namespace App;
 
 use App\Models\proposal;
 use App\Models\User;
-use App\Models\proposal;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,8 +11,6 @@ class review_proposal extends Model
 {
     use HasFactory;
     
-    protected $table = 'review_proposals';
-    protected $primaryKey = 'id';
     
     protected $table = 'review_proposals';
     protected $primaryKey = 'id';
