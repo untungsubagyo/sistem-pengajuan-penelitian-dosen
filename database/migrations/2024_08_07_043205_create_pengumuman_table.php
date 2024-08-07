@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('pengumuman', function (Blueprint $table) {
             $table->id();
-            $table->string('id_user', 10);
+            $table->string('id_user');
             $table->foreign('id_user')->references('nidn')->on('users')->onDelete('cascade');
             $table->date('tanggal');
-            $table->string('judul', 100);
+            $table->varchar('judul', 100);
             $table->text('deskripsi');
             $table->text('file');
             $table->enum('status', ['draf', 'publish']);
@@ -24,7 +24,6 @@ return new class extends Migration
         });
     }
 
-    
     /**
      * Reverse the migrations.
      */
