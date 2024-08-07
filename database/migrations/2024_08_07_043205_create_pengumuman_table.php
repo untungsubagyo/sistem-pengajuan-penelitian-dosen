@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengumumen', function (Blueprint $table) {
+        Schema::create('pengumuman', function (Blueprint $table) {
             $table->id();
-            $table->string('id_user', 18);
+            $table->string('id_user');
+            $table->foreign('id_user')->references('nidn')->on('users')->onDelete('cascade');
             $table->date('tanggal');
             $table->varchar('judul', 100);
             $table->text('deskripsi');
@@ -23,11 +24,12 @@ return new class extends Migration
         });
     }
 
+    
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengumumen');
+        Schema::dropIfExists('pengumuman');
     }
 };

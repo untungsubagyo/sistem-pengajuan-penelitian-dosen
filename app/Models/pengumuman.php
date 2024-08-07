@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class pengumuman extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'tanggal', 'judul', 'deskripsi', 'file', 'status'
-    ];
-} 
+    protected $table = 'pengumuman';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
+    protected $fillable = ['tanggal_pengumuman', 'judul', 'deskripsi', 'file', 'status', 'user_id' ];
+    
+    public function pengumuman()
+    {
+        return $this->belongsTo(Proposal::class, 'id');
+    }
+}
