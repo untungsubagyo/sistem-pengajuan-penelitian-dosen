@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('skema_penelitians', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_skema');
+            $table->string('nama_skema', 255);
             $table->enum('sumber_dana', ["Internal", "Eksternal"]);
             $table->integer('durasi');
             $table->enum('satuan_durasi', ["Bulan", "Tahun"]);
             $table->integer('total_biaya');
-            $table->integer('bobot_rumusan_masalah', 20);
-            $table->integer('bobot_luaran', 20);
-            $table->integer('bobot_metode', 20);
-            $table->integer('bobot_tinjauan_pustaka', 20);
-            $table->integer('bobot_kelayakan', 20);
+            $table->integer('bobot_rumusan_masalah');
+            $table->integer('bobot_luaran');
+            $table->integer('bobot_metode');
+            $table->integer('bobot_tinjauan_pustaka');
+            $table->integer('bobot_kelayakan');
             $table->timestamps();
         });
     }
