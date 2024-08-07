@@ -16,7 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('nip'); // Changed from integer to string
+            $table->string('no_telepon'); // Changed from integer to string
+            $table->enum('jabatan_fungsional', ['asisten_ahli', 'rektor', 'rektor_kepala', 'guru_besar']);
+            $table->string('rumpun');
+            $table->string('password'); 
             $table->rememberToken();
             $table->timestamps();
         });
