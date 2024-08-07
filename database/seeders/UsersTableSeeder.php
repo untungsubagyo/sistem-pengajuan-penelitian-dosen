@@ -131,25 +131,28 @@ class UsersTableSeeder extends Seeder
         foreach ($usersWithTwoRoles as $user) {
             $userId = DB::table('users')->insertGetId($user);
             DB::table('role_user')->insert([
-                ['user_id' => $user['nidn'], 'role_id' => 2], // Dosen role
-                ['user_id' => $user['nidn'], 'role_id' => 3], // Reviewer role
+                ['user_id' => $userId, 'role_id' => 2], // Dosen role
+                ['user_id' => $userId, 'role_id' => 3], // Reviewer role
             ]);
         }
 
         // Assign roles to users with three roles
-        $threeRoleUsers = [
-            '01110111',
-            '102021',
-            '202031',
-            '303041'
-        ];
+        DB::table('role_user')->insert([
+            ['user_id' => '01110111', 'role_id' => 1], // Admin role
+            ['user_id' => '01110111', 'role_id' => 2], // Dosen role
+            ['user_id' => '01110111', 'role_id' => 3], // Reviewer role
 
-        foreach ($threeRoleUsers as $nidn) {
-            DB::table('role_user')->insert([
-                ['user_id' => $nidn, 'role_id' => 1], // Admin role
-                ['user_id' => $nidn, 'role_id' => 2], // Dosen role
-                ['user_id' => $nidn, 'role_id' => 3], // Reviewer role
-            ]);
-        }
+            ['user_id' => '102021', 'role_id' => 1], // Admin role
+            ['user_id' => '102021', 'role_id' => 2], // Dosen role
+            ['user_id' => '102021', 'role_id' => 3], // Reviewer role
+
+            ['user_id' => '202031', 'role_id' => 1], // Admin role
+            ['user_id' => '202031', 'role_id' => 2], // Dosen role
+            ['user_id' => '202031', 'role_id' => 3], // Reviewer role
+
+            ['user_id' => '303041', 'role_id' => 1], // Admin role
+            ['user_id' => '303041', 'role_id' => 2], // Dosen role
+            ['user_id' => '303041', 'role_id' => 3], // Reviewer role
+        ]);
     }
 }
