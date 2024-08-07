@@ -8,5 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class tim_litabmas extends Model
 {
     use HasFactory;
-    protected $fillable = ["id_proposal","nama","tugas","status"];
+    protected $table = 'tim_litabmas';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
+    protected $fillable = ["id_proposal", "nama", "tugas", "status"];
+
+    public function proposal()
+    {
+        return $this->belongsTo(Proposal::class, 'id_proposal');
+    }
 }
