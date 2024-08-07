@@ -24,7 +24,7 @@ class review_proposal extends Model
         'skor_metode',
         'skor_tinjauan_pustaka',
         'skor_kelayakan_umum',
-        'status'
+        'status',
     ];
 
     public function user()
@@ -36,6 +36,4 @@ class review_proposal extends Model
     {
         return $this->belongsToMany(proposal::class, 'proposal_review', 'review_proposal_id', 'proposal_id');
     }
-
-
 }
