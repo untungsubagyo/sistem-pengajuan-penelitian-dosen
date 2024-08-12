@@ -3,17 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengumuman List</title>
+    <title>Detail Pengumuman</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        .card-text {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
@@ -34,21 +25,16 @@
             </div>
         </div>
     </nav>
-    
+
     <div class="container">
-        <h1 class="vw-bold text-center">PENGUMUMAN</h1>
-        <div class="row">
-            @foreach ($pengumuman as $item)
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->judul }}</h5>
-                            <p class="card-text">{{ $item->deskripsi }}</p>
-                            <a href="{{ route('pengumuman.show', $item->id) }}" class="btn btn-primary">Details</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ $pengumuman->judul }}</h5>
+                <p class="card-text">{{ $pengumuman->deskripsi }}</p>
+                <p class="card-text"><strong>Tanggal:</strong> {{ $pengumuman->tanggal->format('d M Y') }}</p>
+                <p class="card-text"><strong>File:</strong> <a href="{{ asset($pengumuman->file) }}" target="_blank">{{ $pengumuman->file }}</a></p>
+                <a href="{{ route('welcome') }}" class="btn btn-secondary">Back to List</a>
+            </div>
         </div>
     </div>
 
