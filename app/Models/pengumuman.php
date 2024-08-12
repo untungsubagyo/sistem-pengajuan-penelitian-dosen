@@ -11,7 +11,7 @@ class pengumuman extends Model
     protected $table = 'pengumuman';
     protected $primaryKey = 'id';
     public $timestamps = true;
-    protected $fillable = ['tanggal_pengumuman', 'judul', 'deskripsi', 'file', 'status', 'user_id' ];
+    protected $fillable = ['id_user','tanggal_pengumuman', 'judul', 'deskripsi', 'file', 'status' ];
     
     public function pengumuman()
     {
