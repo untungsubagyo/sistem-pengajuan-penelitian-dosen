@@ -16,3 +16,5 @@ Route::post('admin/pengumuman', [PengumumanController::class, 'store'])->name('p
 Route::get('admin/pengumuman/{id}/edit', [PengumumanController::class, 'edit'])->name('pengumuman.edit');
 Route::put('admin/pengumuman/{id}', [PengumumanController::class, 'update'])->name('pengumuman.update');
 Route::delete('admin/pengumuman/{id}', [PengumumanController::class, 'destroy'])->name('pengumuman.destroy');
+
+Route::get('/user/reviewer', [ReviewerController::class, 'index'])->name('reviewer');
