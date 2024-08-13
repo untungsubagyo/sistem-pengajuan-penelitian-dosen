@@ -10,6 +10,7 @@ Login
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <form class="card" action="{{ route('login-action') }}" method="post" style="border-radius: 1rem; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(5px)">
+                    @csrf
                     <div class="card-body p-5">
                         <div class="mt-md-4">
                             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
