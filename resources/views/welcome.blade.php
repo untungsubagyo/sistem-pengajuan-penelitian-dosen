@@ -51,8 +51,8 @@
     <header id="header" class="sticky-top">
         <div class="container d-flex align-items-center">
             <h3 class="logo me-auto">ERALITABMAS</h3>
-            <a href="#appointment"><span class="d-none d-md-inline btn btn-outline-dark">HOME</a>
-            <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Login</a>
+            <a href="#appointment"><span class="d-none d-md-inline btn btn-outline-dark">HOME</span></a>
+            <a href="/login" class="appointment-btn scrollto"><span class="d-none d-md-inline">Login</span></a>
         </div>
     </header><!-- End Header -->
 
@@ -61,7 +61,7 @@
         <div class="flex-column">
             @foreach ($pengumuman as $item)
                 <div class="mb-4 w-100">
-                    <div class="card h-100">
+                    <div class="card h-100 border-0 p-3" style="box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.1); border-radius: 1rem;">
                         <div class="card-body">
                             <h5 class="card-title">{{ $item->judul }}</h5>
                             <p class="card-text">{{ $item->deskripsi }}</p>
