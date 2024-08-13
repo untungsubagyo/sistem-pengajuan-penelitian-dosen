@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             UsersTableSeeder::class,
             PengumumanSeeder::class,
+            ProposalTableSeeder::class,
         ]);
     }
 }
