@@ -5,7 +5,7 @@
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
-                    <img src="assets/images/logo.svg" alt="" srcset="">
+                    <img src="/assets/themes/voler-main/assets/images/logo.svg" alt="" srcset="">
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
@@ -25,7 +25,7 @@
                             </a>
                             <ul class="submenu ">  
                                 <li>
-                                    <a href="form-element-input.html">Tabel</a>
+                                    <a href="{{ route('manage_proposal.index') }}">Tabel</a>
                                 </li>
                                 <li>
                                     <a href="form-element-input-group.html">Tambah</a>
@@ -34,7 +34,7 @@
                         </li>
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
-                                <i data-feather="file-text" width="20"></i> 
+                                <i data-feather="users" width="20"></i> 
                                 <span>Tim</span>
                             </a>
                             <ul class="submenu ">  
@@ -48,7 +48,7 @@
                         </li>
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
-                                <i data-feather="file-text" width="20"></i> 
+                                <i data-feather="award" width="20"></i> 
                                 <span>Luaran/Capaian</span>
                             </a>
                             <ul class="submenu ">  
@@ -92,7 +92,7 @@
                         <li class="dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                                 <div class="avatar me-1">
-                                    <img src="assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                                    <img src="/assets/themes/voler-main/assets/images/avatar/avatar-s-1.png" alt="" srcset="">
                                 </div>
                                 <div class="d-none d-md-block d-lg-inline-block">Hi, Saugi</div>
                             </a>

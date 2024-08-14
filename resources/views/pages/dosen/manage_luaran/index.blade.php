@@ -18,43 +18,51 @@
         </div>
     </div>
     <!-- Bordered table start -->
-    <div class="row" id="table-bordered">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-content">
-                    <!-- table bordered -->
-                    <div class="table-responsive">
-                        <table class="table table-bordered mb-0">
-                            <thead>
+    <section class="section tim">
+        <div class="card">
+            <div class="card-header">
+                DATA CAPAIAN/LUARAN
+            </div>
+            <div class="card-body">
+                <table class='table table-bordered mb-0' id="table1">
+                    <thead>
+                        <tr>
+                            <th>NO.</th>
+                            <th>JUDUL PROPOSAL</th>
+                            <th>TAHUN</th>
+                            <th>JENIS CAPAIAN</th>
+                            <th>INDIKATOR</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($datas as $index => $data)
                             <tr>
-                                <th>NO</th>
-                                <th>NAMA PROPOSAL</th>
-                                <th>TAHUN</th>
-                                <th>JENIS CAPAIAN</th>
-                                <th>INDIKATOR</th>
-                                <th>ACTION</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="text-bold-500">1</td>
-                                <td>UI/UX</td>
-                                <td class="text-bold-500">2024</td>
-                                <td>NASKAH JURNAL</td>
-                                <td>safuenfltoownoi ytetnuoiu ytuoiyuven utnvoiuniouotp uifuib3yctibyo8i</td>
+                                <td class="text-bold-500">{{ $index + 1 }}</td>
+                                <td>{{ $data->judul }}</td>
+                                <td class="text-bold-500">{{ $data->tahun }}</td>
+                                <td>{{ $data->jenis_capaian }}</td>
+                                <td>{{ $data->indikator }}</td>
                                 <td>
-                                    <a href="#">
-                                        <i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="mail"></i>
-                                    </a>
+                                    <form onsubmit="return confirm('Apakah Anda yakin?')" action="{{route('manage_luaran.destroy', $data->id)}}" method="POST">
+                                        <a href="{{route('manage_luaran.edit', $data->id)}}" class="btn icon icon-left btn-outline-warning"><i data-feather="edit">Edit</i></a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn icon icon-left btn-outline-danger"><i data-feather="delete">Hapus</i></button>
+                                    </form>
                                 </td>
                             </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                            @empty
+                            <tr>
+                                <td colspan="6" class="text-center"> Data Capaian/Luaran Kosong</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
+
+    </section>
     <!-- Bordered table end -->
     </div>
 
