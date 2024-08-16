@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'action'])->name('login-action');
 
+
+
+
 Route::get('/', [PengumumanController::class, 'index'])->name('welcome');
 Route::get('/pengumuman/{id}', [PengumumanController::class, 'show'])->name('pengumuman.show');
 Route::get('admin/pengumuman/create', [PengumumanController::class, 'create'])->name('pengumuman.create');
