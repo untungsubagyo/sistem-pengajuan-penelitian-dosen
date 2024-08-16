@@ -12,7 +12,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->validateCsrfTokens(except: [
-            'http://sistem-pengajuan-penelitian-dosen.test/login'
+            'http://sistem-pengajuan-penelitian-dosen.test/login',
+            'http://sistem-pengajuan-penelitian-dosen.test/user/reviewer/*',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

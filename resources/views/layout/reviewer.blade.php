@@ -10,11 +10,16 @@
          </div>
          <div class="sidebar-menu">
             <ul class="menu">
-               <li class='sidebar-title'>Main Menu</li>
-               <li class="sidebar-item  ">
-                  <a href="index.html" class='sidebar-link'>
+               <li class="sidebar-item">
+                  <a href="{{ route('reviewer') }}" class='sidebar-link'>
                      <i data-feather="home" width="20"></i>
                      <span>Daftar Proposal</span>
+                  </a>
+               </li>
+               <li class="sidebar-item">
+                  <a href="{{ route('reviewer.viewAllDraf') }}" class='sidebar-link'>
+                     <i data-feather="book" width="20"></i>
+                     <span>Draf Review</span>
                   </a>
                </li>
             </ul>
@@ -36,9 +41,9 @@
                <li class="dropdown">
                   <a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                      <div class="avatar me-1">
-                        <img src="assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                        <img src="https://pa1.narvii.com/6474/bc2b4e9086166d632df3aebf1518fc2527cb344a_128.gif" alt="" srcset="">
                      </div>
-                     <div class="d-none d-md-block d-lg-inline-block">Hi, Saugi</div>
+                     <div class="d-none d-md-block d-lg-inline-block">Hi, Sagiri Izumi</div>
                   </a>
                   <div class="dropdown-menu dropdown-menu-end">
                      <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>
