@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreign('id_user')->references('nidn')->on('users')->onDelete('cascade');
             $table->bigInteger('id_proposal')->unsigned();
             $table->foreign('id_proposal')->references('id')->on('proposals')->onDelete('cascade');
-            $table->date ('reviwer_data');
+            $table->date ('reviwer_date');
             $table->text ('file');
             $table->text ('catatan');
             $table->enum ('skor_rumusan_masalah', ['1', '2', '3', '4', '5']);
