@@ -41,9 +41,9 @@
                <li class="dropdown">
                   <a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                      <div class="avatar me-1">
-                        <img src="https://pa1.narvii.com/6474/bc2b4e9086166d632df3aebf1518fc2527cb344a_128.gif" alt="" srcset="">
+                        <img src="https://i.pinimg.com/originals/cf/dd/ff/cfddff3e2d2556a6a3cebce1e12c9859.jpg" alt="" srcset="">
                      </div>
-                     <div class="d-none d-md-block d-lg-inline-block">Hi, Sagiri Izumi</div>
+                     <div class="d-none d-md-block d-lg-inline-block">Hi, Anonimous</div>
                   </a>
                   <div class="dropdown-menu dropdown-menu-end">
                      <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>

@@ -1,15 +1,16 @@
 <?php
 
+use App\Http\Controllers\HomeAfterLoginController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\ReviewerController;
+use App\Http\Middleware\Authorizer;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'action'])->name('login-action');
 
-
-
+Route::get('/user', [HomeAfterLoginController::class, 'index'])->name('home-after-login');
 
 Route::get('/', [PengumumanController::class, 'index'])->name('welcome');
 Route::get('/pengumuman/{id}', [PengumumanController::class, 'show'])->name('pengumuman.show');
