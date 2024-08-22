@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Models\proposal;
 use App\Models\User;
@@ -11,13 +11,12 @@ class review_proposal extends Model
 {
     use HasFactory;
     
-    
     protected $table = 'review_proposals';
     protected $primaryKey = 'id';
     protected $fillable = [
         'id_user',
         'id_proposal',
-        'reviwer_data',
+        'reviwer_date',
         'file',
         'catatan',
         'skor_rumusan_masalah',
