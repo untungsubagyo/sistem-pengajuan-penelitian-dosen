@@ -9,7 +9,7 @@ class Jabatan extends Model
 {
     use HasFactory;
     
-    protected $table = 'proposals';
+    protected $table = 'jabatans';
     protected $primaryKey = 'id';
     protected $fillabel = [
         'nama'

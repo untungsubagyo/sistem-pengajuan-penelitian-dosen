@@ -51,4 +51,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
 
     }
+  // App\Models\User.php
+public function jabatan()
+{
+    return $this->belongsTo(Jabatan::class, 'id_jabatan', 'id');
+}
+
+
 }
