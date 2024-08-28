@@ -11,13 +11,15 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    protected $primaryKey = 'nidn';
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nidn',
+        'nama',
         'email',
         'password',
     ];
@@ -49,4 +51,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
 
     }
+  // App\Models\User.php
+public function jabatan()
+{
+    return $this->belongsTo(Jabatan::class, 'id_jabatan', 'id');
+}
+
+
 }
